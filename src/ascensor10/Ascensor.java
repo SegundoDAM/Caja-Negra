@@ -15,6 +15,27 @@ public class Ascensor {
 	private int plantaActual=0;
 	private ArrayList<Integer> plantasSolicitadas;
 	
+
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+	public int getPlantaActual() {
+		return plantaActual;
+	}
+
+	public void setPlantaActual(int plantaActual) {
+		this.plantaActual = plantaActual;
+	}
+
+	public ArrayList<Integer> getPlantasSolicitadas() {
+		return plantasSolicitadas;
+	}
+	
+	public void setPlantasSolicitadas(ArrayList<Integer> plantasSolicitadas) {
+		this.plantasSolicitadas = plantasSolicitadas;
+	}
 	/**
 	 * El usuario pide la planta a la que quiere ir.
 	 * Esta peticion se ordena para parar en todas las plantas
@@ -27,6 +48,10 @@ public class Ascensor {
 		
 	}
 	
+	public Estado getEstado() {
+		return estado;
+	}
+
 	/**
 	 * El ascensor seguira su sentido, dependiendo del estado actual,
 	 * si está subiendo ira a la siguiente planta solicitada mayor que la
