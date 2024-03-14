@@ -1,5 +1,6 @@
 package ascensor10;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
@@ -70,6 +71,7 @@ class AscensorTest {
 		ascensor.solicitarPlanta(plantaSolicitada);
 		plantasExpected = new int[] {4};
 		assertEquals(ascensor.getPlantasSolicitadas(), Arrays.asList(plantasExpected));
+		assertTrue(ascensor.getPlantasSolicitadas().equals(Arrays.asList(plantasExpected)));
 		plantaSolicitada = 3;
 		ascensor.solicitarPlanta(plantaSolicitada);
 		plantasExpected = new int[] {4,3};
@@ -83,8 +85,6 @@ class AscensorTest {
 	void testSeguirRuta() {
 		ascensor.setPlantaActual(0);
 		ascensor.setEstado(Estado.subiendo);
-//		plantasExpected = new int[] { 5,7,9 };
-//		ArrayList<Integer> lista=(ArrayList)Arrays.asList(plantasExpected);
 		ArrayList<Integer> lista=new ArrayList();
 		lista.add(5);
 		lista.add(7);
@@ -94,15 +94,15 @@ class AscensorTest {
 		//estoy en la cinco
 		assertEquals(ascensor.seguirRuta(),lista.get(0));
 		lista.remove(0);
-		assertEquals(ascensor.getPlantasSolicitadas(), Arrays.asList(plantasExpected));
+		assertEquals(ascensor.getPlantasSolicitadas(), lista);
 		//estoy en la siete
 		assertEquals(ascensor.seguirRuta(),lista.get(0));
 		lista.remove(0);
-		assertEquals(ascensor.getPlantasSolicitadas(), Arrays.asList(plantasExpected));
+		assertEquals(ascensor.getPlantasSolicitadas(), lista);
 		//estoy en la nueve
 		assertEquals(ascensor.seguirRuta(),lista.get(0));
 		lista.remove(0);
-		assertEquals(ascensor.getPlantasSolicitadas(), Arrays.asList(plantasExpected));
+		assertEquals(ascensor.getPlantasSolicitadas(), lista);
 		assertEquals(ascensor.getEstado(),Estado.bajando);
 	}
 

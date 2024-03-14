@@ -9,7 +9,7 @@ public interface HangmanGame {
      * Inicia un nuevo juego del Ahorcado.
      * 
      * @param word La palabra a adivinar
-     * @param maxAttempts El número máximo de intentos permitidos
+     * @param maxAttempts El nï¿½mero mï¿½ximo de intentos permitidos
      */
     public void startNewGame(String word, int maxAttempts);
     
@@ -18,7 +18,6 @@ public interface HangmanGame {
      * 
      * @param letter La letra a intentar adivinar
      * @return true si la letra es parte de la palabra, false de lo contrario
-     * @throws IllegalStateException Si el juego no se ha iniciado aún
      */
    public  boolean guessLetter(char letter);
     
@@ -26,15 +25,13 @@ public interface HangmanGame {
      * Obtiene el estado actual de la palabra a adivinar, mostrando las letras adivinadas y los espacios en blanco.
      * 
      * @return El estado actual de la palabra
-     * @throws IllegalStateException Si el juego no se ha iniciado aún
      */
     public String getWordState();
     
     /**
-     * Obtiene el número de intentos restantes.
+     * Obtiene el nï¿½mero de intentos restantes.
      * 
-     * @return El número de intentos restantes
-     * @throws IllegalStateException Si el juego no se ha iniciado aún
+     * @return El nï¿½mero de intentos restantes
      */
     public int getRemainingAttempts();
     
@@ -42,7 +39,6 @@ public interface HangmanGame {
      * Comprueba si el juego ha terminado.
      * 
      * @return true si el juego ha terminado, false de lo contrario
-     * @throws IllegalStateException Si el juego no se ha iniciado aún
      */
     public boolean isGameOver();
     
@@ -50,7 +46,6 @@ public interface HangmanGame {
      * Comprueba si el jugador ha ganado el juego.
      * 
      * @return true si el jugador ha ganado, false de lo contrario
-     * @throws IllegalStateException Si el juego no se ha iniciado aún
      */
     public boolean isGameWon();
 }

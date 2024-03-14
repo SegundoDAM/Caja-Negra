@@ -1,6 +1,7 @@
 package ascensor10;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * El ascensor tiene diez plantas.
@@ -16,6 +17,23 @@ public class Ascensor {
 	private ArrayList<Integer> plantasSolicitadas;
 	
 
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(estado, maxPlanta);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ascensor other = (Ascensor) obj;
+		return estado == other.estado && maxPlanta == other.maxPlanta;
+	}
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
