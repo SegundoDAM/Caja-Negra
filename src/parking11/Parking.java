@@ -6,8 +6,8 @@ public class Parking implements Parkinable{
 	private String matricula;
 	private float tarifa=0.10f;
 	private boolean pagado=false;
-	private Hora momentoSalida;
 	private boolean permiso;
+	private int minutosCortesia=20;
 	
 	public Parking(Hora horaInicio, String matricula) {
 		super();
